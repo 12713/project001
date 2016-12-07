@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	function jy(){
+		var n = document.getElementById("num").value;
+		var span = document.getElementById("result");
+		var value = eval(n+1);
+		
+		span.innerHTML = value;
+</script>
+</head>
+<body>
+	<p>金钱</p>
+	<input type="text" id="num"/>
+	<input type="button" value="+1" onclick="jy();"/>
+	=<span id="result"></span>
+</body>
+</html>

@@ -1,0 +1,79 @@
+bady{
+	font-family:"微软雅黑","文泉驿正黑","黑体";
+}
+*{
+	padding:0;
+	margin:0;
+}
+div{
+	border:1px solid grey;
+	margin:0 auto;
+}
+.logo{
+	width:960px;
+	height:61px;
+}
+.nav{
+	height:91px;
+}
+.core{
+	height:410px;
+	padding-top:10px;
+}
+.copy{
+	width:960px;
+	height:50px;
+}
+.content{
+	width:950px;
+	height:390px;
+	border:5px solid #8ac1db;
+}
+.content div{
+	width:910px;
+	height:40px;
+}
+.content .data{
+	height:310px;
+}
+body{
+	background:#0EA8D8;
+}
+.logo{
+	background-image:url(../img/top_bg.png);
+}
+.nav{
+	background-color:#0488BB;
+}
+.content{
+	background-color:#e8f3f8;
+}
+.core{
+	background:url(../img/content_bg.png) repeat-x top;
+}
+.logo{
+	text-align:right;
+	line-height:61px;
+}
+.logo a{
+	margin-right:40px;
+	color:#FFF;
+	font-size:14px;
+	text-decoration:none;
+}
+.logo a:hover{
+	font-weight:bold;/*变粗*/
+}
+.copy p{
+	color:#FFF;
+	font-size:14px;
+	text-align:center;
+	height:25px;
+	line-height:25px;
+}
+
+
+
+
+
+

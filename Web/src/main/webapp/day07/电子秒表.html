@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>电子秒表</title>
+<style>
+	#minute,#second,#milli{
+	background-color:#FFC0D0;
+		border:2px solid #FFC0D0;
+		width:200px;
+		height:200px;
+		line-height:60px;
+		text-align:center;
+		font-size:50px;
+	}
+	#record{
+		background-color:#FFC0D0;
+		border:2px solid #FFC0D0;
+		width:200px;
+		height:300px;
+		line-height:30px;
+		font-size:25px;
+		overflow:auto
+	}
+</style>
+<script>
+	var id;
+	var n=0;
+	//var span1;
+	//var span2;
+	//var span3;
+	var  ms=0;
+	function start(){
+		if(id){
+			return;
+		}
+		id = setInterval(function(){
+			ms+=10;
+			var milli=ms%1000/10;
+			var second=parseInt(ms/1000%60);
+			var minute=parseInt(ms/1000/60);
+			var span1 = document.getElementById("minute");
+			var span2 = document.getElementById("second");
+			var span3 = document.getElementById("milli");
+			//if(hm<10){
+			//	span3.innerHTML="0"+hm;
+			//}else{
+				span3.innerHTML=prepend(milli);
+			//}
+			//if(m<10){
+			//	span2.innerHTML="0"+m;
+			//}else{
+				span2.innerHTML=prepend(second);
+			//}
+			//if(f<10){
+			//	span1.innerHTML="0"+f;
+			//}else{
+				span1.innerHTML=prepend(minute);
+			//}
+		},10);
+	}
+	//填0占位
+	function prepend(x){
+		return x.toString().length==1?"0"+x:x;
+	}
+	function stop(){
+		if(id){
+			clearInterval(id);
+			id=null;
+		}
+	}
+	function reset(){
+		if(id){
+			return;
+		}
+		var span1 = document.getElementById("minute");
+		var span2 = document.getElementById("second");
+		var span3 = document.getElementById("milli");
+		span1.innerHTML="00";
+		span2.innerHTML="00";
+		span3.innerHTML="00";
+		ms=0;
+	}
+	function record(){
+		if(id){
+			return;
+		}
+		n++;
+		var span1 = document.getElementById("minute");   
+		var span2 = document.getElementById("second");
+		var span3 = document.getElementById("milli");
+		var p= document.getElementById("record");
+		p.innerHTML+="第"+n+"次"+":"+span1.innerHTML+":"+span2.innerHTML+"·"+span3.innerHTML+"<br>";
+	}
+	function del(){
+		location.reload();
+	}
+</script>
+</head>
+<body>
+	<input type="button" value="电子秒表：">
+	<input type="button" value="启动" onclick="start();"/>
+	<input type="button" value="暂停" onclick="stop();"/>
+	<input type="button" value="复位" onclick="reset();"/>
+	<input type="button" value="记次" onclick="record();"/>
+	<input type="button" value="清空记录" onclick="del();"/>
+	<p id=p1>
+		<span id="minute">00</span>
+		<span>：</span>
+		<span id="second">00</span>
+		<span>.</span>
+		<span id="milli">00</span>
+	</p>
+	<p type="text" id=record></p>
+</body>
+</html>

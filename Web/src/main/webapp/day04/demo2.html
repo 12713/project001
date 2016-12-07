@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>相片墙</title>
+<style>
+	body{
+		background-color:pink;
+	}
+	ul{
+		width:1500px;
+		margin:30px auto;
+		/*去掉列表前面的符号*/
+		list-style-type:none;
+		/*border:1px solid red;*/
+	}
+	li{
+		width:218px;
+		padding:10px;
+		margin:10px;
+		/*border:1px solid #fc9;*/
+		float:left;
+		background-color:#FFF;
+	}
+	p{
+		text-align:center;
+	}
+	/*相似定位：以自己原来的位置为目标 元素不脱离流（不会脱离流）*/
+	li:hover{
+		position:relative;
+		left:2px;
+		top:2px;
+	}
+</style>
+</head>
+<body>
+	<ul>
+		<li>
+			<img src="../images/01.jpg">
+			<p>星期一</p>
+		</li>
+		<li>
+			<img src="../images/02.jpg">
+			<p>星期二</p>
+		</li>
+		<li>
+			<img src="../images/03.jpg">
+			<p>星期三</p>
+		</li>
+		<li>
+			<img src="../images/04.jpg">
+			<p>星期四</p>
+		</li>
+		<li>
+			<img src="../images/05.jpg">
+			<p>星期五</p>
+		</li>
+		<li>
+			<img src="../images/06.jpg">
+			<p>星期六</p>
+		</li>
+		
+	</ul>
+</body>
+</html>

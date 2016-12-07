@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	//获取框中的值
+	function jc(){
+		var n = document.getElementById("num").value;
+	//获取span
+	var span = document.getElementById("result");
+	if(isNaN(n)){
+		//不是数字,给予提示
+		span.innerHTML = "请输入数字";
+	}else{
+		//是数字,计算其阶乘
+		if(n<0){
+			span.innerHTML = "负数没有阶乘";
+		}else if(n==0){
+			span.innerHTML = 1;
+		}else{
+			//正整数
+			n++;
+			var value = eval(n);
+			span.innerHTML = value; 
+			document.getElementById("num").value=value;
+		}
+	}
+	}
+</script>
+</head>
+<body>
+	<p>负数没有阶乘</p>
+	<p>0的阶乘是1</p>
+	<p>n的阶乘=1*2*3*...*n</p>
+	<p>
+		<input type="text" id="num"/>
+		<input type="button" value="+1" onclick="jc();"/>
+		=<span id="result"></span>
+	</p>
+</body>
+</html>
